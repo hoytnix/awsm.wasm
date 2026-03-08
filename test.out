@@ -1,0 +1,22 @@
+
+running 1 test
+test tests::test_bh_cts_runner ... FAILED
+
+failures:
+
+---- tests::test_bh_cts_runner stdout ----
+Running fixture: 001_manage_import_alias
+Description: Tests aliasing an existing import using the v1.1 PWS schema.
+
+thread 'tests::test_bh_cts_runner' (1073594) panicked at src/main.rs:562:21:
+assertion `left == right` failed: [001_manage_import_alias] PWS mismatch
+  left: Object {"actions": Array [Object {"ensure": String("core.exceptions"), "is_type_only": Bool(false), "module": String("with_standard_error_handling"), "type": String("MANAGE_IMPORT")}], "purity_hash": String("verified-awsm-state"), "tx_id": String("pending_tx"), "v": Number(1)}
+ right: Object {"actions": Array [Object {"is_type_only": Bool(false), "module": String("utils"), "replace_with": String("newFunction"), "target_import": String("oldFunction"), "type": String("MANAGE_IMPORT")}], "purity_hash": String("verified-awsm-state"), "tx_id": String("pending_tx"), "v": Number(1)}
+note: run with `RUST_BACKTRACE=1` environment variable to display a backtrace
+
+
+failures:
+    tests::test_bh_cts_runner
+
+test result: FAILED. 0 passed; 1 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+

@@ -1,0 +1,23 @@
+name: "002_translate_dialect"
+description: "Tests the generation of a TypeScript interface and applying it to a parameter."
+input_awsm: |
+  (awsm:pipe (<)
+    (awsm:translate-dialect 
+      :target @processData 
+      :enforce-explicit-type "DataConfig" 
+      :generate-interface ["id: string" "isActive: boolean"] 
+      :target-param-index 0)
+  )
+expected_exit_code: 0
+expected_pws:
+  v: 1
+  tx_id: "pending_tx"
+  purity_hash: "verified-awsm-state"
+  actions:
+    - type: "TRANSLATE_DIALECT"
+      target_urn: "urn:awsm:ROOT"
+      enforce_explicit_type: "DataConfig"
+      generate_interface: 
+        - "id: string"
+        - "isActive: boolean"
+      target_param_index: 0

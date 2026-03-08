@@ -1,0 +1,9 @@
+name: "004_payload_constraint_violation"
+description: "Ensures missing required payload fields trigger a PurityFail exit code."
+input_awsm: |
+  (awsm:pipe (<)
+    ;; Hallucinated instruction with no mutation payload
+    (awsm:mutate-call :target @broken_fn)
+  )
+expected_exit_code: 32  # 0x20 in hex (AwsmErrorCode::PurityFail)
+expected_pws: null      # Nothing should be emitted to stdout

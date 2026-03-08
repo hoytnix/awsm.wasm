@@ -1,0 +1,21 @@
+name: "001_manage_import_alias"
+description: "Tests aliasing an existing import using the v1.1 PWS schema."
+input_awsm: |
+  (awsm:pipe (<)
+    (awsm:manage-import 
+      :target-import "oldFunction"
+      :replace-with "newFunction" 
+      :module "utils" 
+      :is-type false)
+  )
+expected_exit_code: 0  # AwsmErrorCode::Success
+expected_pws:
+  v: 1
+  tx_id: "pending_tx"
+  purity_hash: "verified-awsm-state"
+  actions:
+    - type: "MANAGE_IMPORT"
+      target_import: "oldFunction"
+      replace_with: "newFunction"
+      module: "utils"
+      is_type_only: false

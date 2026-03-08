@@ -1,0 +1,22 @@
+name: "003_mutate_call_positional"
+description: "Tests injecting configuration arguments at a specific index."
+input_awsm: |
+  (awsm:pipe (<)
+    (awsm:mutate-call 
+      :target @fetchData 
+      :inject {:timeout "3000" :retries "3"} 
+      :target-arg-index 1)
+  )
+expected_exit_code: 0
+expected_pws:
+  v: 1
+  tx_id: "pending_tx"
+  purity_hash: "verified-awsm-state"
+  actions:
+    - type: "MUTATE_CALL"
+      target_urn: "urn:awsm:ROOT"
+      payload:
+        inject_args:
+          timeout: "3000"
+          retries: "3"
+        target_arg_index: 1
