@@ -1,3 +1,7 @@
+<div align="center">
+  <img src="https://awsm-wasm.netlify.app/awsm.svg" alt="AWSM Logo" width="200"/>
+</div>
+
 # ⚡️ AWSM (Alchememe WebAssembly Mutation Language) v1.0
 
 ![Coverage](https://img.shields.io/badge/Coverage-86.10%25-brightgreen.svg)

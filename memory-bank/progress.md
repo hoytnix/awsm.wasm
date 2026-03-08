@@ -13,6 +13,7 @@
 - Proper constraint validation routing `VmError`s to deterministic `PurityFail` (exit code 32) behavior.
 - Barren-Host Conformance Test Suite (BH-CTS) looping over YAML assertions successfully verifying output configurations.
 - Test coverage stands at 86.10% measured by `cargo tarpaulin`, easily beating the 45% required threshold. All essential modules have 90% to 100% test coverage!
+- Integrated the new dope AWSM SVG logo across the web client, UI, and READMEs.
 
 ## What's Left to Build
 - Full integration with the `patchiest` Rust crate or TypeScript tooling ecosystem.

@@ -1,0 +1,40 @@
+@import url('https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;600&family=Inter:wght@300;400;600;800&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply bg-dark-900 text-white font-sans antialiased text-slate-300;
+  }
+}
+
+@layer components {
+  .glass-panel {
+    @apply bg-opacity-10 bg-white backdrop-filter backdrop-blur-lg border border-white border-opacity-20 shadow-xl rounded-2xl;
+  }
+  
+  .gradient-text {
+    @apply bg-clip-text text-transparent bg-gradient-to-r from-accent-cyan via-accent-blue to-accent-purple;
+  }
+
+  .btn-primary {
+    @apply relative inline-flex items-center justify-center px-8 py-3 overflow-hidden font-semibold text-dark-900 rounded-full bg-gradient-to-r from-accent-cyan to-accent-blue shadow-[0_0_40px_rgba(102,252,241,0.5)] transition-all hover:scale-105 hover:shadow-[0_0_60px_rgba(102,252,241,0.8)] focus:outline-none;
+  }
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #0b0c10;
+}
+::-webkit-scrollbar-thumb {
+  background: #1f2833;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #45a29e;
+}
